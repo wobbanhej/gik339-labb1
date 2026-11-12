@@ -98,3 +98,64 @@ största skillnaden är att en ternary operatorn alltid returnerar ett värde oc
 Jag satte (!) framför paranteserna för att värderna inte får vara något av det som paranteserna innehåller, 
 samt använde type of för att säkerställa att parameterna är 'number'.
 Med && ställs kravet att både num1 och num2 måste uppfylla villkoren.*/
+
+// Uppgift 5
+
+const num1 = 0;
+let arg1;
+let sum = false;
+
+//Test 1
+console.log("Test 1:")
+console.log(add(sum, 1));
+
+//Test 2
+console.log("Test 2:")
+console.log(add("0", 3));
+
+//Test 3
+console.log("Test 3:")
+console.log(add(3, "num1"));
+
+//Test 4
+console.log("Test 4:")
+console.log(add(-5, num1));
+
+//Test 5
+console.log("Test 5:")
+console.log(add(arg1, 7));
+
+//Test 6
+console.log("Test 6:")
+console.log(add())
+
+//Skriver ut num1 och sum
+console.log("Summa")
+console.log("num1:", num1);
+console.log("sum:", sum);
+
+/* Reflektion uppgift 5
+1. 
+Variabel är en namngiven behållare som tillhandahåller ett givet värde.
+Parameter skulle man kunna beskriva som tomma argument. De körs i en funktion utan ett egentligt värde.
+Argument är de faktiska värdet när en funktion anropas.
+
+2.
+num1 som slutvärde får jag 0.
+Detta är av anleding "const num1 = 0" högst upp, medan parametern num1 används i annat scope,
+därav förblir num1 som 0 som slutresultat.
+
+3. Översta utskrift är från min första console.log i skript.js
+
+Därefter kommer olika utskrifter som "I am batman", vilket kommer från blocket i uppgift 2, där jag
+provade var, let och const.
+
+I test 1-6 står det utskrifter som "falsy, false, true, undefined, felaktig input, truthy".
+Dessa utskrifter kommer från anropen till add() i uppgift 5.
+Varje gång add() anropas körs de fem console.log-raderna högst upp i funktionen, därav true/false/falsy/truthy som skrivs ut.
+Samtliga tester utom test 4 har felaktig datatyp (inte siffror), så skickas den till else - därav utskriften "Felaktig input" på övriga,
+och eftersom det inte finns en return så skrivs dessutom "undefined" ut. Test 4 däremot, där det är -5 och 0, som därför returnerar -5.
+
+Längst ner i utskrifterna står det "num1: 0" & "sum: false". Detta beror på att de inte tillhör samma scope,
+och därför skrivs det som skrivits ut utanför scopet eftersom const och let skrivits ut efter blocket och inte heller kan nås in till scopet."
+*/
